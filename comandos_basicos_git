@@ -58,3 +58,9 @@ git brach
 
 #crear ramas
 git brach nombre_rama
+
+#cambiar de ram 
+git checkout nombre_rama
+
+#crear ram e ir a ella
+git checkout -b nombre_rama
