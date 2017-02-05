@@ -1,0 +1,60 @@
+cd /ruta/de/proyecto
+#se inicializa el repositorio
+git init
+
+#un punto para agregar todos los archivos y carpetas
+git add .
+
+#se hace un comentario
+
+git commit -m 
+git commit
+git commit -am ""
+-a para agregar todo 
+-m para indicar que es un mensaje.
+
+#ejemplo git remote add origin git@github.com:rocket1420/Agenda.git
+git remote add nombre_rama repositorio.git
+
+#error falta: remote origin al ready exists 
+
+#solución
+
+git remote rm origin
+
+#un remoto es donde se se sube el código 
+#para ver un remoto usar 
+git remote 
+
+#se hace el push para subir el proyecto
+git push -u nombre_remoto nombre_rama
+
+#Ver todo los cambios efectuados 
+git diff
+
+#ver archivos modificados 
+git status
+
+#añadir cambio al siguiente cambio al siguiente commit
+git add nombre_archivo
+
+#deshacer el cambio de git add
+git reset HEAD nombre_archivo
+
+#borrar archivos del repositorio
+git rm nombre_archivo
+
+#borrar el último git
+git reset --soft HEAD~1
+
+#recuperar codigo de internet git pull hace lo contrario de push
+git pull nombre_remoto nombre_rama
+
+# ver historial 
+git log
+
+#mostrar ramas
+git brach
+
+#crear ramas
+git brach nombre_rama
