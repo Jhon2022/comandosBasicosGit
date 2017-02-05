@@ -1,0 +1,56 @@
+#!/bin/bash
+clear
+echo -e '\n'
+echo "|-----------------------------------------------------------|"
+echo "|	BIENVENIDO SINCRONIZA CON SSH TU GESTOR DE VERSIONES|"
+echo "|-----------------------------------------------------------|"
+sleep 2
+clear
+while :
+do
+echo "1. Desea intalar git"
+echo "2. Registrar nombre y usuario ."
+echo "3. Crear llave ssh."
+echo "4. Imprimir llave ssh."
+echo "0. Salir."
+echo -n "Seleccione una opcion "
+read opcion
+case $opcion in
+1) echo "instalando git";
+sudo apt-get install git && echo "Git instalado con exito!" && sleep 1 && clear;;
+
+2) echo -e "Registro de usuario y email! \n";
+echo -n "Digite su nombre de usuario: "
+
+read usuario
+
+echo -n 'Digite su email: '
+
+read email
+sleep 1
+clear
+
+git config --global user.name "$usuario"
+
+git config --global user.email "$email"
+;;
+3)echo 'Creacion de llave ssh';
+ssh-keygen
+echo -e "\n Creaccion de llave fue un exito"
+git config --list
+sleep 2
+clear
+;;
+4)
+echo 'copie y pegue esta clave en github o gitlab dar clic en perfil '
+echo 'en la columna Personal setting buscar SSH and GPG key dar clic.'
+echo 'Buscar el boton verde New SSH key.'
+echo 'Darle un titulo deseado y pegar la llave ssh a en el apartado indicado abajo del titulo.'
+echo -e '\n'
+echo 'en su defecto para GitHub https://github.com/settings/keys'
+cat .ssh/id_rsa.pub
+echo -e '\n\n';;
+0) echo -e '\n by: Jhon R and Andrea';
+exit 1;;
+esac
+done
